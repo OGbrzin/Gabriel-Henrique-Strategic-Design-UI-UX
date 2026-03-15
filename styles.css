@@ -1,0 +1,40 @@
+/* Estilos base customizados e classes utilitárias que o Tailwind CDN pode não cobrir inline facilmente */
+
+/* Configuração de Scrollbar Customizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1C1C1C;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #F5B700;
+}
+
+/* Utilitários de Animação Reveal On Scroll */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays para animações em cadeia */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* Ocultar elementos via css puro (prevent FOUC do tailwind) se precisar */
+[x-cloak] { display: none !important; }
