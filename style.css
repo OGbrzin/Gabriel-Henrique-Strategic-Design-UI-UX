@@ -1,0 +1,116 @@
+/* Estilos base customizados e classes utilitárias que o Tailwind CDN pode não cobrir inline facilmente */
+
+/* Configuração de Scrollbar Customizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1C1C1C;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #F5B700;
+}
+
+/* Utilitários de Animação Reveal On Scroll */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays para animações em cadeia */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* Ocultar elementos via css puro (prevent FOUC do tailwind) se precisar */
+[x-cloak] { display: none !important; }
+
+/* Estilos Premium para Cases High-Ticket */
+.premium-border-glow {
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.premium-border-glow:hover {
+    box-shadow: 0 0 30px rgba(245, 183, 0, 0.15);
+    border-color: rgba(245, 183, 0, 0.4) !important;
+}
+
+.browser-mockup {
+    border-top: 24px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    border-radius: 12px 12px 0 0;
+}
+
+.browser-mockup::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    left: 12px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff5f56;
+    box-shadow: 16px 0 0 #ffbd2e, 32px 0 0 #27c93f;
+}
+
+.metric-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+}
+
+/* Botão Premium Outline */
+.btn-premium-outline {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-premium-outline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(245, 183, 0, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-premium-outline:hover::before {
+    width: 300%;
+    height: 300%;
+}
+
+.btn-premium-outline:hover {
+    box-shadow: 0 0 20px rgba(245, 183, 0, 0.2);
+    border-color: rgba(245, 183, 0, 0.6);
+}
+
+/* Animação Flutuante Suave */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
